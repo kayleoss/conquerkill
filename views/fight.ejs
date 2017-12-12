@@ -1,0 +1,18 @@
+<% include partials/header %>
+<body>
+    <div class="container custom-container" style='color:white'>
+        <h1>Battle Verdict</h1>
+       <img src="https://s-media-cache-ak0.pinimg.com/originals/7c/b8/ea/7cb8ea16113b468d23e2636e1ee8b49e.jpg" style="width:50%"/> 
+       <% if (results.verdict != 'tied!'){ %>
+        <p><span style="color:red"><%= results.currentUser %></span> attacked <span style="color:red"><%= results.otherUser %></span>!</p>
+        <p><span style="color:red;font-size:1.7em"><%= results.winner %></span> Won The Battle!</p>
+        <p><span style="color:red"><%= results.winner %></span> Got 50 coins and 1 fightscore.</p>
+        <p><span style="color:red"><%= results.loser %></span> Lost 50 coins and 1 fightscore.</p>
+       <% } else { %>
+        <p><span style="color:red"><%= results.winner %></span> and <span style='color:red'><%= results.loser %></span> TIED!!!!! </p>
+       <% } %>
+
+       <a href="/userhome" class=" red darken-4 btn" style="font-family: Spectral SC">Go Home</a>
+    </div>
+
+<% include partials/footer2 %>

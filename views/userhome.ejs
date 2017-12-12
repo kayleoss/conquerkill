@@ -1,0 +1,107 @@
+<% include partials/header %>
+<% include partials/user-navbar %>
+    <div class="row">
+        <div class="col s12 m3 custom-container">
+            <h1 class="white-h1">Welcome, <span style='color:red'><%= currentUser.username %></span></h1>
+            <% if (currentUser.gender == 'Female'){ %>
+                <img src="https://www.vainglorygame.com/wp-content/uploads/2017/02/cath_glad_0048_Frame-12.jpg"/>
+           <% }else if(currentUser.gender == 'Male'){ %>
+                <img src="https://www.vainglorygame.com/wp-content/uploads/2017/01/lance_glad_0058_Frame-2.jpg"/>
+           <% } %>
+           <span style="text-align:left">
+                <p style='color:white'>Coins <i class="fa fa-gg-circle" aria-hidden="true"></i> : <span style="color:red"><%= currentUser.coins %> </span> </p>
+                <p style="color:white">Fightscore <i class="fa fa-star" aria-hidden="true"></i> : <span style="color:red"><%= currentUser.score %></span></p>
+                <p style="color:white">Attack <i class="fa fa-gavel" aria-hidden="true"></i> : <span style="color:red"><%= currentUser.attack %></span></p>
+                <p style="color:white">Defense <i class="fa fa-shield" aria-hidden="true"></i> : <span style="color:red"><%= currentUser.defense %></span></p>
+           </span>
+           <hr>
+           <div class="weapons-container">
+                <h1 class="white-h1">Equipped Weapons</h1>
+                <div class="row">
+                    <% currentUser.weapons.map(weapon => { %>
+                        <div class="col s12 m6">
+                        <p style="color:red"><%= weapon %></p>
+                        <% switch(weapon){
+                            case 'crappy sword': %>
+                                <p style="color:cyan">+10 Attack</p>
+                                <img src="https://vignette.wikia.nocookie.net/kingdomhearts/images/c/cd/Wooden_Sword.png/revision/latest?cb=20110125222103"/>
+                            <%    break %>
+                            <% case 'crappy shield': %>
+                                <p style="color:cyan">+10 Defense</p>
+                                <img src="https://s-media-cache-ak0.pinimg.com/originals/54/65/6c/54656c3eb383128ad8dcf2d82dcd3e5e.png"/>
+                                <%  break %>
+                            <% case 'silver shield': %>
+                                <p style="color:cyan">+15 Defense</p>
+                                <img src="http://al-taiclub.com/images/metal-shield-clipart-6.png"/>
+                                <%  break %>
+                            <% case 'stronghold shield': %>
+                                <p style="color:cyan">+25 Defense</p>
+                                <img src="http://pngimg.com/uploads/shield/shield_PNG1276.png"/>
+                                <%  break %>
+                            <% case 'dranik shield': %>
+                                <p style="color:cyan">+35 Defense</p>
+                                <img src="http://www.pngpix.com/wp-content/uploads/2016/11/PNGPIX-COM-Shield-PNG-Transparent-Image.png"/>
+                                <%  break %>
+                            <% case 'euphronos shield': %>
+                                <p style="color:cyan">+50 Defense</p>
+                                <img src="https://vignette.wikia.nocookie.net/camphalfbloodroleplay/images/1/12/Melyssa%27s_Shield.png/revision/latest?cb=20140112012914"/>
+                                <%  break %>
+                            <% case 'mace of euphronos': %>
+                                <img src="https://vignette.wikia.nocookie.net/mkwikia/images/6/63/Mace.png/revision/latest?cb=20110416184028"/>
+                                <% break %>
+                            <%  case 'greatsword of planet earth': %>
+                                <img src="http://pngimg.com/uploads/sword/sword_PNG5526.png"/>
+                                <%  break %>
+                            <%  case 'sword of euphronos': %>
+                                <img src="http://www.freepngimg.com/thumb/sword/12-sword-png-image-thumb.png"/>
+                                <%  break %>
+                            <%  case 'dranik greatsword': %>
+                                <img src="https://vignette.wikia.nocookie.net/finalfantasy/images/b/b9/FFXI_Great_Sword_12B.png/revision/latest?cb=20131208121213"/>
+                                <%  break %>
+                            <%  default: %>
+                                <!-- No weapon here -->
+                            <%  } %>
+                        </div>
+                    <% }) %>
+                </div>
+           </div>
+        </div>
+        <div class="col s12 m6 main-container" style="border-radius:0px">
+            <h1 class="black-h1">Battle Other Users</h1>
+            <div class="row">
+                    <% foundUsers.map(user => { %>
+                        <div class="col s12 m4" style="margin-top:2%">
+                            <div class="custom-container">
+                            <h1 class="white-h1" style="color:red;font-size:1em"><%= user.username %></h1>
+                            <% if (user.gender === 'Male'){ %>
+                                <img src="https://www.vainglorygame.com/wp-content/uploads/2017/01/lance_glad_0058_Frame-2.jpg" style="width:70%"/>
+                           <% }else if (user.gender === 'Female'){ %>
+                                <img src="https://www.vainglorygame.com/wp-content/uploads/2017/02/cath_glad_0048_Frame-12.jpg" style="width:70%"/>
+                           <% } %>
+                           <span style="color:white">
+                                <p style="font-size:1em;text-align:left">Fightscore: <span style="color:red;"><%= user.score %></span></p>
+                                <p style="text-align:left;font-size:1em">Weapons:
+                                    <% user.weapons.map(weapon => { %>
+                                      <span style='color:red;font-size:1em'> <%= weapon %></span>,
+                                   <% }) %>
+                                </p>
+                            </span>
+                            <a href="/fight/<%= user._id %>" class="red darken-4 btn" style="margin-bottom:5%;font-family:Spectral SC">FIGHT</a>
+                        </div>
+                    </div>
+                  <%  }) %>
+            </div>
+        </div>
+        <div class="col s12 m3 custom-container">
+          <h1 class="white-h1">Recent Battles</h1>
+          <hr>
+          <span style='color:white'>
+            <% results.map(result => { %>
+            <p><span style="color:red"><%= result.currentUser %></span> attacked <span style='color:red'><%= result.otherUser %></span> and <span style="color:red"><%= result.verdict %></span></p>
+            <% }) %>
+          </span>
+        </div>
+    </div>
+
+
+<% include partials/footer2 %>

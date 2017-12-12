@@ -1,0 +1,94 @@
+<% include partials/header %>
+    <% include partials/navbar %>
+        <div class="row">
+            <div class="col s12 m3 wow fadeInDown" data-wow-delay="0.5s">
+                <div class="custom-container">
+                    <% if (currentUser){ %>
+                    <h1 class="white-h1">Logged in as <span style="color:red"><%= currentUser.username %></span></h1>
+                    <p style='color:white'>Coins: <span style="color:red"><%= currentUser.coins %></span> </p>
+                    <p style="color:white">Fightscore: <span style="color:red"><%= currentUser.score %></span></p>
+                    <p style="color:white">Attack: <span style="color:red"><%= currentUser.attack %></span></p>
+                    <p style="color:white">Speed: <span style="color:red"><%= currentUser.speed %></span></p>
+
+                    <a href="/userhome" class="red accent-4 btn-large">Fight</a> <br/>
+                    <a href="/logout" class="blue-grey darken-3 btn-large" style="margin-top:5%">Log Out</a>
+                   <% }else{ %>
+                    <h1 class="white-h1">Sign Up!</h1>
+                    <form class="s12 m3 lg3"action="/signup"method="POST">
+                        <label>Email</label>
+                        <input class="validate" type="email" name="email" placeholder="Your Email Address" required>
+                        <label>Desired Username</label>
+                        <input class="validate" type="text" name="username" placeholder="Desired Username" required>
+                        <label>Desired Password</label>
+                        <input class="validate" type="password" name="password" placeholder="Desired Password" required>
+                        <label>Gender</label>
+
+                        <div id="radios">
+                            <p>
+                                <input name="gender" type="radio"value="Male" id="test1" />
+                                <label for="test1">Male</label>
+                            </p>
+                            <p>
+                                <input name="gender" type="radio" value="Female" id="test2" />
+                                <label for="test2">Female</label>
+                            </p>
+                        </div>
+                        <button type="submit" class="blue-grey darken-3 btn-large">Sign Up</button>
+                    </form>
+                <div class="custom-container" style="margin-top:13%">
+                    <h1 class="white-h1">Log In</h1>
+                    <form class="s12 m3 lg3"action="/login" method="POST">
+                        <input class="validate" type="text" name="username" placeholder="Username"  required>
+                        <input class="validate" type="password" name="password" placeholder="Password"  required>
+                        <button type="submit" class=" blue-grey darken-3 btn-large">Login</button>
+                    </form>
+                </div>
+
+            <% } %>
+            </div>
+        </div>
+            <div class="col s12 m6">
+                <div class="main-container">
+                    <h1 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">Welcome to <span class="underlined-text">ConquerKill</span></h1>
+                    <p class="wow slideInLeft" data-wow-duration="1s" data-wow-delay="0.5s">Battle Other Users Online. Who Will You Become?</p>
+                    <hr style="border-color:black">
+                    <!--slideshow -->
+                    <div class="wow lightSpeedIn" data-wow-delay="1s">
+                        <img class="mySlides" src="http://www.sickchirpse.com/wp-content/uploads/2013/06/Gaming-Gladiator.jpg" style="width:100%">
+                        <img class="mySlides" src="https://i.pinimg.com/736x/f6/f6/fc/f6f6fc949d396400cc248911b4ef5e7f--roman-gladiators-rome-antique.jpg" style="width:100%">
+                        <img class="mySlides" src="https://s3.amazonaws.com/user-media.venngage.com/765757-e4ad6cfb87757570fa87522c8b439a76.jpg" style="width:100%">
+                    </div>
+
+                    <p style="text-align:left">It's 2050 and scientists have discovered a new planet in our galaxy: Euphronos. On it, they find an undeveloped world of humans just like us, along with
+                        animals of every species. They quickly find that the humans living on Euphronos are very different from the humans on Earth. They are the equivalent of gladiators,
+                        fighting their way to victory. They are uncivilized brutes that are struggling to survive. <br/><br/>
+
+                        You decide to join them. You're thrown into Euphronos head-first with nowhere to go but into the fight pit. Other citizens of Euphronos look at you, examining how weak
+                        you look and imagining how easy it will be for them to beat you and then mug you of your futuristic items. They're howling and yelling in a foreign language, screaming that
+                        they deserve to fight you first. <br/><br/>
+
+                        They hurdle you a crappy shield and sword, and you stand your ground, preparing to fight and defeat each of them one by one and claim your throne in Euphronos.
+                    </p>
+                </div>
+            </div>
+            <div class="col s12 m3">
+                <div class="custom-container">
+                    <h1 class="white-h1">Mace Of Euphronos</h1>
+                    <p style="color:rgb(241, 1, 1);font-family:Spectral SC">+15 Attack!</p>
+                    <p style="color:grey">Cost: 1000 Coins</p>
+                    <img src="https://vignette.wikia.nocookie.net/mkwikia/images/6/63/Mace.png/revision/latest?cb=20110416184028">
+                </div>
+                <div class="custom-container2">
+                    <h1>Earn Coins By Training Or Defeating Other Players!</h1>
+                </div>
+                <div class="custom-container">
+                    <h1 class="white-h1">Greatsword Of Planet Earth</h1>
+                    <p style="color:rgb(241, 1, 1);font-family:Spectral SC">+50 Attack!</p>
+                    <p style="color:grey">Cost: 10,000 Coins</p>
+                    <img src="http://pngimg.com/uploads/sword/sword_PNG5526.png">
+                </div>
+            </div>
+        </div>
+
+
+<% include partials/footer %>

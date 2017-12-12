@@ -1,0 +1,32 @@
+<% include partials/header %>
+<% include partials/navbar %>
+  <div class="container">
+    <div class="custom-container">
+      <h1 class="white-h1">Create An Account To <span class="underlined-text">Start Playing</span></h1>
+      <div class="container">
+        <form class="s12 m3 lg3"action="/signup"method="POST">
+            <label>Email</label>
+            <input class="validate" type="email" name="email" placeholder="Your Email Address" required>
+            <label>Desired Username</label>
+            <input class="validate" type="text" name="username" placeholder="Desired Username" required>
+            <label>Desired Password</label>
+            <input class="validate" type="password" name="password" placeholder="Desired Password" required>
+            <label>Gender</label>
+
+            <div id="radios">
+                <p>
+                    <input name="gender" type="radio"value="Male" id="test1" />
+                    <label for="test1">Male</label>
+                </p>
+                <p>
+                    <input name="gender" type="radio" value="Female" id="test2" />
+                    <label for="test2">Female</label>
+                </p>
+            </div>
+            <button type="submit" class="blue-grey darken-3 btn-large">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<% include partials/footer2 %>

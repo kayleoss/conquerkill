@@ -1,0 +1,37 @@
+<div class="container" style="margin-top:5%">
+    <hr style="border-color:rgb(97, 1, 1)">
+</div>
+<div id="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4">
+                <p>&copy; <a href="http://katieliu.ca" target="_blank">Katie</a> 2017 </p>
+            </div>
+            <div class="col s12 m4">
+                <p><a href="/login">Login</a> - <a href="/signup">Sign Up</a> - <a href="/">Home</a>
+                <a href="http://katieliu.ca">Creator</a> - <a href="http://github.com/kayleoss">Github</a> - <a href="/donate">Why Donate?</a>
+                </p>
+
+            </div>
+            <div class="col s12 m4">
+                <!-- <a class="red darken-4 btn-large" href="">Donate</a> -->
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                  <!-- Identify your business so that you can collect the payments. -->
+                  <input type="hidden" name="business" value="katie_business@hotmail.ca">
+                  <!-- Specify a Buy Now button. -->
+                  <input type="hidden" name="cmd" value="_xclick">
+                  <!-- Specify details about the item that buyers will purchase. -->
+                  <input type="hidden" name="item_name" value="donation">
+                  <input type="hidden" name="amount" value="5"> <input type="hidden" name="currency_code" value="CAD">
+                  <!-- Display the payment button. -->
+                  <button type="submit" name="submit" style="border:0px" class="red darken-4 btn-large" value="Donate" alt="Donate">Donate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

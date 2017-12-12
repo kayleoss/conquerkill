@@ -1,0 +1,33 @@
+<body>
+    <ul id="dropdown1" class="dropdown-content">
+      <% if(currentUser){ %>
+      <li><a href="/userhome">Fight</a></li>
+      <li class="divider"></li>
+      <li><a href="/shop">Weapons Shop</a></li>
+      <li class="divider"></li>
+      <li><a href="/howtoplay">How To Play</a></li>
+      <li class="divider"></li>
+      <li><a href="/donate">Why Donate?</a></li>
+      <li class="divider"></li>
+      <li><a href="/logout">Logout</a></li>
+    <% }else{ %>
+      <li><a href="/">Home</a></li>
+      <li class="divider"></li>
+      <li><a href="/howtoplay">How To Play</a></li>
+      <li class="divider"></li>
+      <li><a href="/login">Login</a></li>
+      <li class="divider"></li>
+      <li><a href="/signup">Sign Up</a></li>
+      <li class="divider"></li>
+      <li><a href="/donate">Why Donate?</a></li>
+    <% } %>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><img src="http://vignette3.wikia.nocookie.net/planetside2/images/f/f0/Sword_and_Shield_Decal_TR.png/revision/latest?cb=20130911195218"/></a>
+            <ul class="right">
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu <i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </nav>

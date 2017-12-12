@@ -1,0 +1,16 @@
+<% include partials/header %>
+<% include partials/navbar %>
+  <div class="container">
+    <div class="custom-container">
+      <div class='container'>
+        <h1 class="white-h1">Login To Your Account &amp; <span class="underlined-text">Continue The Fight</span></h1>
+        <form class="s12 m3 lg3"action="/login" method="POST">
+            <input class="validate" type="text" name="username" placeholder="Username"  required>
+            <input class="validate" type="password" name="password" placeholder="Password"  required>
+            <button type="submit" class=" blue-grey darken-3 btn-large">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<% include partials/footer2 %>

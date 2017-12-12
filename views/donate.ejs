@@ -1,0 +1,29 @@
+<% include partials/header %>
+<% include partials/navbar %>
+    <div class="container main-container" style="text-align:left">
+        <h1 style="text-align:center">ConquerKill Needs Your <span class="underlined-text">Support</span></h1>
+        <hr style="border-color:black">
+        <p>Our Free-To-Play model ensures the game is fair and that all players in the game are completely equal and can play the game for free with the same
+        chance of winning battles and getting coins as everyone else.</p>
+        <p>The reason we are able to keep a free-to-play model is because of supporters and
+          donors like you. We hope to continue the free-to-play model for as long as possible, as we believe it is
+          what makes the game what it is.
+        </p>
+        <p>Currently, we are accepting Paypal donations of just $5. If you would like to donate more than $5, please get in touch with ConquerKill's CEO and creator,
+        <a href="mailto:katie.liu@mavencare.com">Katie</a>.</p>
+        <h1>Donate Today To Keep ConquerKill Going!</h1>
+        <span style="text-align:center">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <!-- Identify your business so that you can collect the payments. -->
+            <input type="hidden" name="business" value="katie_business@hotmail.ca">
+            <!-- Specify a Buy Now button. -->
+            <input type="hidden" name="cmd" value="_xclick">
+            <!-- Specify details about the item that buyers will purchase. -->
+            <input type="hidden" name="item_name" value="donation">
+            <input type="hidden" name="amount" value="5"> <input type="hidden" name="currency_code" value="CAD">
+            <!-- Display the payment button. -->
+            <button type="submit" name="submit" style="border:0px" class="red darken-4 btn-large" alt="Donate">Donate</button>
+          </form>
+      </span>
+    </div>
+<% include partials/footer2 %>

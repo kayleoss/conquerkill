@@ -1,0 +1,186 @@
+/*
+font-family: 'Spectral SC', serif;
+font-family: 'Freckle Face', cursive;
+font-family: 'Cinzel Decorative', cursive;
+*/
+body{
+    background: black;
+    font-family:'Cinzel Decorative', cursive;
+    font-size:16px;
+    overflow-x:hidden;
+}
+nav{
+    background: transparent;
+    font-family:'Spectral SC', serif;
+    box-shadow:none;
+}
+.btn{
+    font-family:'Spectral SC', sans-serif;
+}
+.small-words{
+    font-size:0.7em;
+}
+.bg-halfscreen{
+    padding:2%;
+    margin-top:0;
+    height:40vh;
+    background: url('http://s3.thingpic.com/images/Wr/SwcxkhzHeB3STgN8zWMFCYGx.jpeg');
+    background-size:cover;
+    background-position: center center;
+}
+.dropdown-content{
+    background-color:black;
+}
+.dropdown-content li a{
+    color:rgb(250, 244, 244);
+}
+.dropdown-content li:hover{
+    background: rgb(53, 1, 1);
+}
+.brand-logo{
+    width:5%;
+    margin-left:2%;
+}
+.brand-logo img{
+    width:100%;
+    padding:23%;
+}
+#footer-section{
+    text-align:center;
+    padding:3%;
+    background:black;
+    background: -webkit-linear-gradient(left bottom, rgb(0, 0, 0), rgb(19, 17, 17));
+}
+#footer-section p{
+    padding:3%;
+    text-align:center;
+    color:white;
+    font-family:'Spectral SC', serif;
+}
+#footer-section a{
+    color:rgb(143, 5, 5);
+    text-decoration:underline;
+}
+#footer-section .btn-large{
+    color:white;
+    text-decoration:none;
+    font-family:'Spectral SC', serif;
+}
+.btn-large{
+    color:white;
+    text-decoration:none;
+    font-family:'Spectral SC', serif;
+}
+.underlined-text{
+    border-bottom:3px solid rgb(119, 3, 3);
+}
+.main-container{
+    margin:0 auto;
+    padding:2%;
+    text-align:center;
+    background:url('http://images.all-free-download.com/images/graphiclarge/old_paper_background_hd_picture_2_169574.jpg');
+    background-size:cover;
+    background-attachment:fixed;
+    border:1px solid black;
+    border-radius:20px;
+    box-shadow:2px 2px 8px black;
+}
+.main-container h1{
+    font-size:2em;
+}
+.main-container p{
+    font-family:'Spectral SC', serif;
+    line-height:20px;
+    font-size:1.4em;
+}
+.main-container img{
+    width:100%;
+    box-shadow:2px 2px 8px black;
+}
+.black-gutter{
+    margin-top:-30%;
+    width:100%;
+}
+.custom-container{
+    padding:10% 4%;
+    text-align:center;
+    background: url('http://1u5ra23nlkv83fo2ig1vo38m.wpengine.netdna-cdn.com/wp-content/uploads/2016/11/Grunge-Dark-Background.jpg');
+    background-size:cover;
+    background-attachment:fixed;
+}
+.custom-container2{
+    padding:3%;
+    background: url('https://image.freepik.com/free-photo/3d-render-of-spotlights-on-a-grunge-brick-wall_1048-6284.jpg');
+    background-size:cover;
+    text-align:center;
+}
+.custom-container2 h1{
+    font-family:'Spectral SC', sans-serif;
+    font-size:1em;
+    color:white;
+}
+.custom-container img{
+    width:100%;
+}
+input{
+   color:white;
+    font-family:'Spectral SC', sans-serif;
+}
+.white-h1{
+    font-family:'Spectral SC', sans-serif;
+    font-size:1em;
+    color:white;
+    text-align:center;
+}
+.mySlides{
+    width:100%;
+    height:50vh;
+}
+
+#radios{
+    margin-bottom:2%;
+}
+.black-h1{
+    color:black;
+    font-family:'Spectral SC', sans-serif;
+}
+.weapons-container img{
+    width:40%;
+}
+.weapons-shop{
+    padding:3%;
+    text-align:center;
+    color:white;
+    background:url('https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-279936.jpg');
+    background-size:cover;
+}
+.weapons-shop img{
+    padding:2%;
+    width:50%;
+}
+.weapon{
+    height:50vh;
+    padding:4%;
+    border:1px solid red;
+    background-color:rgba(3, 3, 3, 0.6);
+}
+.weapon-green{
+    background-color:rgba(3, 3, 3, 0.6);
+    height:50vh;
+    padding:4%;
+    border:1px solid green;
+}
+@media (max-width:768px){
+    .main-container h1{
+        font-size:2em;
+    }
+    nav{
+        width:100%;
+    }
+    .brand-logo{
+        display:none;
+    }
+    .brand-logo img{
+        display:none;
+    }
+}

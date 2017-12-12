@@ -1,0 +1,11 @@
+<% include partials/header %>
+<% include partials/user-navbar %>
+<div class="container main-container">
+    <h1>Purchase failed! <br/> You do not have enough coins</h1>
+    <p>You have <span style="color:red"><%= currentUser.coins %></span> coins.</p>
+    <a href="/shop" class="red darken-3 btn-large">Back</a>
+</div>
+
+
+
+<% include partials/footer2 %>
