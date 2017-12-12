@@ -1,5 +1,3 @@
-# gulp
-> These are the custom initializer settings I use for gulp for larger projects
-# check-string-for-equal-x-o
-# check-string-for-equal-x-o
-# conquerkill
+# Conquerkill
+
+Conquerkill is an 80s inspired retro web game. Create an account and start battling other players!
