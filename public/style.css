@@ -147,6 +147,13 @@ input{
 .weapons-container img{
     width:40%;
 }
+.user-weapons img{
+    width:50%;
+    box-shadow:none;
+}
+.user-weapons p{
+    font-size:1em;
+}
 .weapons-shop{
     padding:3%;
     text-align:center;

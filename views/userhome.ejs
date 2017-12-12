@@ -85,9 +85,56 @@
                            <span style="color:white">
                                 <p style="font-size:1em;text-align:left">Fightscore: <span style="color:red;"><%= user.score %></span></p>
                                 <p style="text-align:left;font-size:1em">Weapons:
-                                    <% user.weapons.map(weapon => { %>
-                                      <span style='color:red;font-size:1em'> <%= weapon %></span>,
-                                   <% }) %>
+                                    <div class="row">
+                                            <% user.weapons.map(weapon => { %>
+                                                <div class="col s12 m6 user-weapons">
+                                                <% switch(weapon){
+                                                    case 'crappy sword': %>
+                                                        <p style="color:cyan">+10 Attack</p>
+                                                        <img src="https://vignette.wikia.nocookie.net/kingdomhearts/images/c/cd/Wooden_Sword.png/revision/latest?cb=20110125222103"/>
+                                                    <%    break %>
+                                                    <% case 'crappy shield': %>
+                                                        <p style="color:cyan">+10 Defense</p>
+                                                        <img src="https://s-media-cache-ak0.pinimg.com/originals/54/65/6c/54656c3eb383128ad8dcf2d82dcd3e5e.png"/>
+                                                        <%  break %>
+                                                    <% case 'silver shield': %>
+                                                        <p style="color:cyan">+15 Defense</p>
+                                                        <img src="http://al-taiclub.com/images/metal-shield-clipart-6.png"/>
+                                                        <%  break %>
+                                                    <% case 'stronghold shield': %>
+                                                        <p style="color:cyan">+25 Defense</p>
+                                                        <img src="http://pngimg.com/uploads/shield/shield_PNG1276.png"/>
+                                                        <%  break %>
+                                                    <% case 'dranik shield': %>
+                                                        <p style="color:cyan">+35 Defense</p>
+                                                        <img src="http://www.pngpix.com/wp-content/uploads/2016/11/PNGPIX-COM-Shield-PNG-Transparent-Image.png"/>
+                                                        <%  break %>
+                                                    <% case 'euphronos shield': %>
+                                                        <p style="color:cyan">+50 Defense</p>
+                                                        <img src="https://vignette.wikia.nocookie.net/camphalfbloodroleplay/images/1/12/Melyssa%27s_Shield.png/revision/latest?cb=20140112012914"/>
+                                                        <%  break %>
+                                                    <% case 'mace of euphronos': %>
+                                                        <p style="color:cyan">+15 Attack</p>
+                                                        <img src="https://vignette.wikia.nocookie.net/mkwikia/images/6/63/Mace.png/revision/latest?cb=20110416184028"/>
+                                                        <% break %>
+                                                    <%  case 'greatsword of planet earth': %>
+                                                    <p style="color:cyan">+50 Attack</p>
+                                                        <img src="http://pngimg.com/uploads/sword/sword_PNG5526.png"/>
+                                                        <%  break %>
+                                                    <%  case 'sword of euphronos': %>
+                                                    <p style="color:cyan">+25 Attack</p>
+                                                        <img src="http://www.freepngimg.com/thumb/sword/12-sword-png-image-thumb.png"/>
+                                                        <%  break %>
+                                                    <%  case 'dranik greatsword': %>
+                                                    <p style="color:cyan">+35 Attack</p>
+                                                        <img src="https://vignette.wikia.nocookie.net/finalfantasy/images/b/b9/FFXI_Great_Sword_12B.png/revision/latest?cb=20131208121213"/>
+                                                        <%  break %>
+                                                    <%  default: %>
+                                                        <!-- No weapon here -->
+                                                    <%  } %>
+                                                </div>
+                                            <% }) %>
+                                    </div>
                                 </p>
                             </span>
                             <a href="/fight/<%= user._id %>" class="red darken-4 btn" style="margin-bottom:5%;font-family:Spectral SC">FIGHT</a>
