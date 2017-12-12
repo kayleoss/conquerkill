@@ -102,7 +102,7 @@ nav{
     width:100%;
 }
 .custom-container{
-    padding:10% 4%;
+    padding:5% 4%;
     text-align:center;
     background: url('http://1u5ra23nlkv83fo2ig1vo38m.wpengine.netdna-cdn.com/wp-content/uploads/2016/11/Grunge-Dark-Background.jpg');
     background-size:cover;
@@ -176,6 +176,27 @@ input{
     height:50vh;
     padding:4%;
     border:1px solid green;
+}
+.animals{
+    padding: 3% 2%;
+    text-align:center;
+}
+.animal-container{
+    padding: 5% 0;
+    border:1px solid black;
+}
+.animals p{
+    color:red;
+}
+.animals img{
+    width:60%;
+    height:30vh;
+    display:block;
+    margin:0 auto;
+    box-shadow:none;
+}
+.animals .btn{
+    margin-top:15%;
 }
 @media (max-width:768px){
     .main-container h1{

@@ -35,7 +35,49 @@ app.get('/', (req, res) => {
 });
 app.get('/howtoplay', function(req, res){
   res.render('howtoplay');
-})
+});
+app.get('/train', isLoggedIn, function(req, res){
+  res.render('train');
+});
+app.get('/train/:animal', isLoggedIn, function(req, res){
+  var currentUser = req.user;
+  currentUser.luck= Math.floor(Math.random() * 9 + 1);
+  var animal = req.params.animal;
+  var animal_luck = Math.floor(Math.random() * 9 + 1);
+  console.log( currentUser.luck + ' : ' + animal_luck);
+
+  if (animal == 'lion'){
+        if(animal_luck > currentUser.luck){
+          var result = 'The ' + animal + ' defeated you.';
+          res.render('training_result', {result: result, animal:animal});
+        }else if(animal_luck < currentUser.luck){
+          var result = 'You defeated the ' + animal + ' and gained 10 coins and 0.25 attack!';
+          currentUser.attack += 0.25;
+          currentUser.coins += 10;
+          currentUser.save();
+          res.render('training_result', {result: result, animal:animal});
+        }else{
+          var result = 'The ' + animal + ' ran away before you could fight it.'
+          res.render('training_result', {result: result, animal:animal});
+        };
+  }else if (animal == 'elephant'){
+          if(animal_luck > currentUser.luck){
+            var result = 'The ' + animal + ' defeated you.';
+            res.render('training_result', {result: result, animal:animal});
+          }else if(animal_luck < currentUser.luck){
+            var result = 'You defeated the ' + animal + ' and gained 10 coins and 0.25 defense!';
+            currentUser.defense += 0.25;
+            currentUser.coins += 10;
+            currentUser.save();
+            res.render('training_result', {result: result, animal:animal});
+          }else{
+            var result = 'The ' + animal + ' ran away before you could fight it.'
+            res.render('training_result', {result: result, animal:animal});
+          };
+  }else{
+    res.redirect('/train');
+  }
+});
 app.get('/shop', function(req, res){
   res.render('shop');
 });

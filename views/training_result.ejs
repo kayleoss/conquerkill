@@ -1,0 +1,20 @@
+<% include partials/header %>
+<% include partials/user-navbar %>
+<div class="container custom-container">
+    <% if (animal == 'lion'){ %>
+        <h1 class="white-h1"><%= result %></h1>
+        <a href="/train" class="btn red darken-2" style="margin: 2% 0">Train Again</a>
+        <a href="/userhome" class="btn green darken-2" style="margin: 2% 0">Dashboard</a>
+        <img src="https://listverse.com/wp-content/uploads/2017/04/venatores.jpg"/>
+  <%  }else if (animal == 'elephant'){ %>
+        <h1 class='white-h1'><%= result %></h1>
+        <a href="/train" class="btn red darken-2" style="margin: 2% 0">Train Again</a>
+        <a href="/userhome" class="btn green darken-2" style="margin: 2% 0">Dashboard</a>
+        <img src="https://cdn.theatlantic.com/assets/media/img/mt/2016/03/42_39239791/lead_960.jpg?1459187615"/>
+  <%  }else{ %>
+        <h1 style='color:red'>ERROR</h1>
+  <%  } %>
+</div>
+
+
+<% include partials/footer2 %>
