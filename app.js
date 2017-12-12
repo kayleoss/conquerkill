@@ -45,8 +45,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
     case 'silvershield':
       if (req.user.coins >= 1000){
         req.user.coins -= 1000;
-        req.user.weapons[1] = 'silver shield';
+        req.user.defense = 0;
+        req.user.weapons.set(1, 'silver shield');
+        req.user.defense += 15;
         req.user.save();
+        res.redirect('/userhome');
       }else{
         res.render('purchase_failed');
       };
@@ -54,8 +57,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
       case 'strongholdshield':
         if(req.user.coins >= 2000){
           req.user.coins -= 2000;
-          req.user.weapons[1] = 'stronghold shield';
+          req.user.defense = 0;
+          req.user.weapons.set(1, 'stronghold shield');
+          req.user.defense += 25;
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
@@ -63,8 +69,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
         case 'dranikshield':
         if(req.user.coins >= 3000){
           req.user.coins -= 3000;
-          req.user.weapons[1] = 'dranik shield';
+          req.user.defense = 0;
+          req.user.defense += 35;
+          req.user.weapons.set(1, 'dranik shield');
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
@@ -72,8 +81,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
         case 'euphronosshield':
         if(req.user.coins >= 10000){
           req.user.coins -= 10000;
-          req.user.weapons[1] = 'euphronos shield';
+          req.user.defense = 0;
+          req.user.defense += 50;
+          req.user.weapons.set(1, 'euphronos shield');
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
@@ -82,8 +94,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
         case 'maceofeuphronos':
         if(req.user.coins >= 1000){
           req.user.coins -= 1000;
-          req.user.weapons[0] = 'mace of euphronos';
+          req.user.attack = 0;
+          req.user.attack += 15;
+          req.user.weapons.set(0, 'mace of euphronos');
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
@@ -91,8 +106,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
         case 'swordofeuphronos':
         if(req.user.coins >= 2000){
           req.user.coins -= 2000;
-          req.user.weapons[0] = 'sword of euphronos';
+          req.user.attack = 0;
+          req.user.attack += 25;
+          req.user.weapons.set(0, 'sword of euphronos');
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
@@ -100,8 +118,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
         case 'dranikgreatsword':
         if(req.user.coins >= 3000){
           req.user.coins -= 3000;
-          req.user.weapons[0] = 'dranik greatsword';
+          req.user.attack = 0;
+          req.user.attack += 35;
+          req.user.weapons.set(0, 'dranik greatsword');
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
@@ -109,8 +130,11 @@ app.get('/shop/:item', isLoggedIn, function(req, res){
         case 'swordofearth':
         if(req.user.coins >= 10000){
           req.user.coins -= 10000;
-          req.user.weapons[0] = 'greatsword of planet earth';
+          req.user.attack = 0;
+          req.user.attack += 50;
+          req.user.weapons.set(0, 'greatsword of planet earth');
           req.user.save();
+          res.redirect('/userhome');
         }else{
           res.render('purchase_failed');
         }
