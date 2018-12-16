@@ -69,21 +69,26 @@
                         </div>
                     <% }) %>
                 </div>
+                <a href="/shop" class="btn red darken-4">Upgrade</a>
            </div>
         </div>
         <div class="col s12 m8 main-container" style="border-radius:0px">
-            <h1 class="black-h1">Battle Other Users</h1>
+            <h1 class="black-h1 main-h1">Battle Other Users</h1>
             <div class="row">
-                    <% foundUsers.map(user => { %>
-                        <div class="col s12 m4" style="margin-top:2%">
-                            <div class="custom-container">
+                <% foundUsers.map(user => { %>
+                    <div class="col s12 m4" style="margin-top:2%">
+                        <div class="custom-container-2 z-depth-4">
                             <h1 class="white-h1" style="color:red;font-size:1em"><%= user.username %></h1>
                             <% if (user.gender === 'Male'){ %>
-                                <img src="https://www.vainglorygame.com/wp-content/uploads/2017/01/lance_glad_0058_Frame-2.jpg" style="width:70%"/>
-                           <% }else if (user.gender === 'Female'){ %>
-                                <img src="https://www.vainglorygame.com/wp-content/uploads/2017/02/cath_glad_0048_Frame-12.jpg" style="width:70%"/>
-                           <% } %>
-                           <span style="color:white">
+                                <div class="container">
+                                    <img src="https://www.vainglorygame.com/wp-content/uploads/2017/01/lance_glad_0058_Frame-2.jpg" />
+                                </div>
+                            <% }else if (user.gender === 'Female'){ %>
+                                <div class="container">
+                                    <img src="https://www.vainglorygame.com/wp-content/uploads/2017/02/cath_glad_0048_Frame-12.jpg" />
+                                </div>
+                            <% } %>
+                            <span style="color:white">
                                 <p style="font-size:1em;text-align:left">Fightscore: <span style="color:red;"><%= user.score %></span></p>
                                 <p style="text-align:left;font-size:1em">Weapons:
                                     <div class="row">
@@ -141,7 +146,7 @@
                             <a href="/fight/<%= user._id %>" class="red darken-4 btn" style="margin-bottom:5%;font-family:Spectral SC">FIGHT</a>
                         </div>
                     </div>
-                  <%  }) %>
+                <%  }) %>
             </div>
         </div>
         <div class="col s12 m2 custom-container">

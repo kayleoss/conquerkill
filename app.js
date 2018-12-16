@@ -197,18 +197,15 @@ app.get('/donate', function(req, res){
 app.get('/userhome', isLoggedIn, function(req, res){
   User.where('username').ne(req.user.username)
   .sort( { field : 'asc', _id: -1})
-  .limit(10)
   .exec((err, foundUsers)=>{
       if(err){
           res.send(err);
-          console.log(err);
       }else{
           Result.find()
-          .limit(10)
           .sort({ field : 'asc', _id: -1})
           .exec((err, results)=>{
             if(err){
-              console.log(err);
+              res.send(err);
             }else{
               res.render('userhome', {foundUsers: foundUsers, results: results});
             };   
@@ -323,7 +320,6 @@ app.get('/fight/:id', isLoggedIn,  function(req, res){
   }); 
 });
 
-//Other Functions =================================>>>>>>
 
 function isLoggedIn(req, res, next){
   if (req.isAuthenticated()){
