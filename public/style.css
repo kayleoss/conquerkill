@@ -105,17 +105,39 @@ nav{
     border: 5px solid rgb(48, 48, 48);
 }
 .main-container {
-    padding:2%;
+    padding: 2%;
     text-align:center;
-    background:url('http://images.all-free-download.com/images/graphiclarge/old_paper_background_hd_picture_2_169574.jpg');
+    background: url('https://www.runescape.com/img/rsp777/scroll/backdrop_745.gif') repeat-y top center;
     background-size: cover;
     background-attachment: fixed;
     border-radius: 10px;
 }
 .main-container.negative-top {
+    padding-left:0;
+    padding-right: 0;
+    border-radius: 0;
     margin-top: -105px;
     padding-top: 100px;
     padding-bottom: 3rem;
+}
+.padded-bottom {
+    padding-bottom: 3rem;
+}
+.main-container.negative-top:before, .main-container.negative-top:after {
+    content: ' ';
+    background: url("https://www.runescape.com/img/rsp777/scroll/backdrop_765_top.gif") no-repeat center top;
+    background-size: contain;
+    height: 50px;
+    right: 0;
+    width: 100%;
+    display: block;
+}
+.main-container.negative-top:before {
+    margin-top: -123px;
+    padding-bottom: 113px;
+}
+.main-container.negative-top:after {
+    margin-bottom: -66px;
 }
 .main-container p {
     font-family:'Spectral SC', serif;
@@ -145,7 +167,7 @@ nav{
     background-position: center left;
 }
 .custom-container img{
-    width:100%;
+    max-width:100%;
 }
 input{
    color:white;
