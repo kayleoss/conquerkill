@@ -26,6 +26,3 @@ TODO:
 
 7) Incorporate cosmetic weapon covers, purchasable with paypal, that change the look of a player's equipped weapon.
 
-
-![alt text](http://oi68.tinypic.com/v5zukx.jpg)
-
