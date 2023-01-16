@@ -27,8 +27,7 @@ app.use(require('express-session')({
     res.locals.Username = User.username;
     next();
  });
-//mongoose.connect('mongodb://localhost/game');
-mongoose.connect('mongodb://kayleoss:paass4@ds135876.mlab.com:35876/game');
+mongoose.connect('mongodb://localhost/game');
 //MAIN ROUTES ====== >
 app.get('/', (req, res) => {
   res.render('home');
